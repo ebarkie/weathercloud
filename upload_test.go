@@ -17,8 +17,8 @@ func TestUploadEncode(t *testing.T) {
 
 	wx := &Wx{}
 	wx.Bar(29.86)
-	a.Equal("http://api.weathercloud.net/v01/set?bar=10111&key=fedc&type=902&version=1.0&wid=0123", d.Encode(wx))
+	a.Equal("http://api.weathercloud.net/v01/set?bar=10111&key=deadbeef&type=902&version=1.0&wid=0123", d.Encode(wx))
 
 	wx.OutTemp(20)
-	a.Equal("http://api.weathercloud.net/v01/set?bar=10111&key=fedc&temp=-66&type=902&version=1.0&wid=0123", d.Encode(wx))
+	a.Equal("http://api.weathercloud.net/v01/set?bar=10111&key=deadbeef&temp=-66&type=902&version=1.0&wid=0123", d.Encode(wx))
 }
