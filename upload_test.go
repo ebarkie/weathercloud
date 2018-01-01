@@ -13,7 +13,7 @@ import (
 func TestUploadEncode(t *testing.T) {
 	a := assert.New(t)
 
-	d := Device{WID: "0123", Key: "beef"}
+	d := Device{WID: "0123", Key: "deadbeef"}
 
 	wx := &Wx{}
 	wx.Bar(29.86)
