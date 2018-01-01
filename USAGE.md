@@ -52,12 +52,12 @@ type Wx struct {
 
 Wx represents weather observations.
 
-#### func (*Wx) Barometer
+#### func (*Wx) Bar
 
 ```go
-func (w *Wx) Barometer(in float64)
+func (w *Wx) Bar(in float64)
 ```
-Barometer is atmospheric pressure in inches.
+Bar is atmospheric pressure in inches.
 
 #### func (*Wx) DailyET
 
@@ -87,19 +87,19 @@ func (w *Wx) HeatIndex(f float64)
 ```
 HeatIndex is the outdoor heat index in degrees Fahrenheit.
 
-#### func (*Wx) IndoorHumidity
+#### func (*Wx) InHumidity
 
 ```go
-func (w *Wx) IndoorHumidity(p int)
+func (w *Wx) InHumidity(p int)
 ```
-IndoorHumidity is the indoor humidity percentage (0-100).
+InHumidity is the indoor humidity percentage (0-100).
 
-#### func (*Wx) IndoorTemperature
+#### func (*Wx) InTemp
 
 ```go
-func (w *Wx) IndoorTemperature(f float64)
+func (w *Wx) InTemp(f float64)
 ```
-IndoorTemperature is the indoor temperature in degrees Fahrenheit.
+InTemp is the indoor temperature in degrees Fahrenheit.
 
 #### func (*Wx) LeafWetness
 
@@ -108,19 +108,19 @@ func (w *Wx) LeafWetness(p int)
 ```
 LeafWetness is the leaf wetness index.
 
-#### func (*Wx) OutdoorHumidity
+#### func (*Wx) OutHumidity
 
 ```go
-func (w *Wx) OutdoorHumidity(p int)
+func (w *Wx) OutHumidity(p int)
 ```
-OutdoorHumidity is the outdoor humidity percentage (0-100).
+OutHumidity is the outdoor humidity percentage (0-100).
 
-#### func (*Wx) OutdoorTemperature
+#### func (*Wx) OutTemp
 
 ```go
-func (w *Wx) OutdoorTemperature(f float64)
+func (w *Wx) OutTemp(f float64)
 ```
-OutdoorTemperature is outdoor temperature in degrees Fahrenheit.
+OutTemp is outdoor temperature in degrees Fahrenheit.
 
 #### func (*Wx) RainRate
 
@@ -130,19 +130,19 @@ func (w *Wx) RainRate(in float64)
 RainRate is rain over the past hour or the accumulated rainfall for the past 60
 minutes in inches.
 
-#### func (*Wx) SoilMoisture
+#### func (*Wx) SoilMoist
 
 ```go
-func (w *Wx) SoilMoisture(cb int)
+func (w *Wx) SoilMoist(cb int)
 ```
-SoilMoisture is the soil moisture in centibars of tension.
+SoilMoist is the soil moisture in centibars of tension.
 
-#### func (*Wx) SolarRadiation
+#### func (*Wx) SolarRad
 
 ```go
-func (w *Wx) SolarRadiation(wm2 int)
+func (w *Wx) SolarRad(wm2 int)
 ```
-SolarRadiation is solar radiation in watts per square meter.
+SolarRad is solar radiation in watts per square meter.
 
 #### func (*Wx) UVIndex
 
@@ -158,19 +158,19 @@ func (w *Wx) WindChill(f float64)
 ```
 WindChill is the wind chill in degrees Fahrenheit.
 
-#### func (*Wx) WindDirection
+#### func (*Wx) WindDir
 
 ```go
-func (w *Wx) WindDirection(deg int)
+func (w *Wx) WindDir(deg int)
 ```
-WindDirection is instantaneous wind direction in degrees (0-359).
+WindDir is instantaneous wind direction in degrees (0-359).
 
-#### func (*Wx) WindDirectionAverage
+#### func (*Wx) WindDirAvg
 
 ```go
-func (w *Wx) WindDirectionAverage(deg int)
+func (w *Wx) WindDirAvg(deg int)
 ```
-WindDirectionAverage is the 10 minute average wind direction in degrees (0-359).
+WindDirAvg is the 10 minute average wind direction in degrees (0-359).
 
 #### func (*Wx) WindGustSpeed
 
@@ -186,9 +186,9 @@ func (w *Wx) WindSpeed(mph float64)
 ```
 WindSpeed is the instantaneous wind speed in miles per hour.
 
-#### func (*Wx) WindSpeedAverage
+#### func (*Wx) WindSpeedAvg
 
 ```go
-func (w *Wx) WindSpeedAverage(mph float64)
+func (w *Wx) WindSpeedAvg(mph float64)
 ```
-WindSpeedAverage is the 10 minute average wind speed in miles per hour.
+WindSpeedAvg is the 10 minute average wind speed in miles per hour.

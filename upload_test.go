@@ -16,9 +16,9 @@ func TestUploadEncode(t *testing.T) {
 	d := Device{WID: "0123", Key: "fedc"}
 
 	wx := &Wx{}
-	wx.Barometer(29.86)
+	wx.Bar(29.86)
 	a.Equal("http://api.weathercloud.net/v01/set?bar=10111&key=fedc&type=902&version=1.0&wid=0123", d.Encode(wx))
 
-	wx.OutdoorTemperature(20)
+	wx.OutTemp(20)
 	a.Equal("http://api.weathercloud.net/v01/set?bar=10111&key=fedc&temp=-66&type=902&version=1.0&wid=0123", d.Encode(wx))
 }

@@ -18,8 +18,8 @@ func tens(f float64) int {
 	return int(f * 10.0)
 }
 
-// Barometer is atmospheric pressure in inches.
-func (w *Wx) Barometer(in float64) {
+// Bar is atmospheric pressure in inches.
+func (w *Wx) Bar(in float64) {
 	w.SetInt("bar", tens(units.Pressure(in*units.Inches).Hectopascals()))
 }
 
@@ -44,13 +44,13 @@ func (w *Wx) HeatIndex(f float64) {
 	w.SetInt("heat", tens(units.Fahrenheit(f).Celsius()))
 }
 
-// IndoorHumidity is the indoor humidity percentage (0-100).
-func (w *Wx) IndoorHumidity(p int) {
+// InHumidity is the indoor humidity percentage (0-100).
+func (w *Wx) InHumidity(p int) {
 	w.SetInt("humin", p)
 }
 
-// IndoorTemperature is the indoor temperature in degrees Fahrenheit.
-func (w *Wx) IndoorTemperature(f float64) {
+// InTemp is the indoor temperature in degrees Fahrenheit.
+func (w *Wx) InTemp(f float64) {
 	w.SetInt("tempin", tens(units.Fahrenheit(f).Celsius()))
 }
 
@@ -59,13 +59,13 @@ func (w *Wx) LeafWetness(p int) {
 	w.SetIntf(request.Indexed{Format: "leafwet#", Begin: 1, Width: 2}, p)
 }
 
-// OutdoorHumidity is the outdoor humidity percentage (0-100).
-func (w *Wx) OutdoorHumidity(p int) {
+// OutHumidity is the outdoor humidity percentage (0-100).
+func (w *Wx) OutHumidity(p int) {
 	w.SetIntf(request.Indexed{Format: "hum#", Begin: 1, Zero: 1, Width: 2}, p)
 }
 
-// OutdoorTemperature is outdoor temperature in degrees Fahrenheit.
-func (w *Wx) OutdoorTemperature(f float64) {
+// OutTemp is outdoor temperature in degrees Fahrenheit.
+func (w *Wx) OutTemp(f float64) {
 	w.SetIntf(request.Indexed{Format: "temp#", Begin: 1, Zero: 1, Width: 2}, tens(units.Fahrenheit(f).Celsius()))
 }
 
@@ -75,13 +75,13 @@ func (w *Wx) RainRate(in float64) {
 	w.SetInt("rainrate", tens(units.Length(in*units.Inches).Millimeters()))
 }
 
-// SolarRadiation is solar radiation in watts per square meter.
-func (w *Wx) SolarRadiation(wm2 int) {
+// SolarRad is solar radiation in watts per square meter.
+func (w *Wx) SolarRad(wm2 int) {
 	w.SetInt("solarrad", wm2*10)
 }
 
-// SoilMoisture is the soil moisture in centibars of tension.
-func (w *Wx) SoilMoisture(cb int) {
+// SoilMoist is the soil moisture in centibars of tension.
+func (w *Wx) SoilMoist(cb int) {
 	w.SetIntf(request.Indexed{Format: "soilmoist#", Begin: 1, Width: 2}, cb)
 }
 
@@ -95,14 +95,14 @@ func (w *Wx) WindChill(f float64) {
 	w.SetInt("chill", tens(units.Fahrenheit(f).Celsius()))
 }
 
-// WindDirection is instantaneous wind direction in degrees (0-359).
-func (w *Wx) WindDirection(deg int) {
+// WindDir is instantaneous wind direction in degrees (0-359).
+func (w *Wx) WindDir(deg int) {
 	w.SetIntf(request.Indexed{Format: "wdir#", Begin: 1, Zero: 1, Width: 2}, deg)
 }
 
-// WindDirectionAverage is the 10 minute average wind direction in
+// WindDirAvg is the 10 minute average wind direction in
 // degrees (0-359).
-func (w *Wx) WindDirectionAverage(deg int) {
+func (w *Wx) WindDirAvg(deg int) {
 	w.SetIntf(request.Indexed{Format: "wdiravg#", Begin: 1, Zero: 1, Width: 2}, deg)
 }
 
@@ -116,8 +116,8 @@ func (w *Wx) WindSpeed(mph float64) {
 	w.SetIntf(request.Indexed{Format: "wspd#", Begin: 1, Zero: 1, Width: 2}, tens(units.Speed(mph*units.MPH).MPS()))
 }
 
-// WindSpeedAverage is the 10 minute average wind speed in miles
+// WindSpeedAvg is the 10 minute average wind speed in miles
 // per hour.
-func (w *Wx) WindSpeedAverage(mph float64) {
+func (w *Wx) WindSpeedAvg(mph float64) {
 	w.SetIntf(request.Indexed{Format: "wspdavg#", Begin: 1, Zero: 1, Width: 2}, tens(units.Speed(mph*units.MPH).MPS()))
 }
