@@ -9,15 +9,12 @@ import (
 	"net/http"
 	"strconv"
 	"time"
+
+	"github.com/ebarkie/http/query"
 )
 
-type observations interface {
-	Clear()
-	Values() map[string]string
-}
-
 // createRequest builds the HTTP request.
-func (d Device) createRequest(obs ...observations) *http.Request {
+func (d Device) createRequest(obs ...query.Values) *http.Request {
 	req, _ := http.NewRequest("GET", URL+"/set", nil)
 
 	// Create mandatory query parameters.
@@ -53,12 +50,12 @@ func (d Device) createRequest(obs ...observations) *http.Request {
 
 // Encode returns the request URL for the specified observations.  This
 // is generally used for testing and debugging.
-func (d Device) Encode(obs ...observations) string {
+func (d Device) Encode(obs ...query.Values) string {
 	return d.createRequest(obs...).URL.String()
 }
 
 // Upload uploads the specified observations.
-func (d *Device) Upload(obs ...observations) (err error) {
+func (d *Device) Upload(obs ...query.Values) (err error) {
 	// Clear payload(s) after upload attempt.
 	defer func() {
 		for _, o := range obs {
