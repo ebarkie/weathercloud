@@ -30,7 +30,7 @@ Device represents a weather device.
 #### func (Device) Encode
 
 ```go
-func (d Device) Encode(obs ...observations) string
+func (d Device) Encode(obs ...query.Values) string
 ```
 Encode returns the request URL for the specified observations. This is generally
 used for testing and debugging.
@@ -38,7 +38,7 @@ used for testing and debugging.
 #### func (*Device) Upload
 
 ```go
-func (d *Device) Upload(obs ...observations) (err error)
+func (d *Device) Upload(obs ...query.Values) (err error)
 ```
 Upload uploads the specified observations.
 
@@ -46,7 +46,7 @@ Upload uploads the specified observations.
 
 ```go
 type Wx struct {
-	request.Data
+	query.Data
 }
 ```
 
