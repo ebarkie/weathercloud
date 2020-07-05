@@ -1,7 +1,7 @@
 # weathercloud
 
 ```go
-import "gitlab.com/ebarkie/weathercloud"
+import "github.com/ebarkie/weathercloud"
 ```
 
 Package weathercloud implements the Weathercloud device upload protocol.

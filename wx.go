@@ -5,8 +5,8 @@
 package weathercloud
 
 import (
-	"gitlab.com/ebarkie/http/query"
-	"gitlab.com/ebarkie/weatherlink/units"
+	"github.com/ebarkie/http/query"
+	"github.com/ebarkie/weatherlink/units"
 )
 
 // Wx represents weather observations.

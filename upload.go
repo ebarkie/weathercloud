@@ -10,7 +10,7 @@ import (
 	"strconv"
 	"time"
 
-	"gitlab.com/ebarkie/http/query"
+	"github.com/ebarkie/http/query"
 )
 
 // createRequest builds the HTTP request.
